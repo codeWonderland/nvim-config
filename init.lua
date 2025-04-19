@@ -7,7 +7,7 @@ require("config.lazy")
 
 -- custom commands
 vim.api.nvim_create_user_command('Lazyupdate', function()
-    vim.cmd('Lazy! sync')
+	vim.cmd('Lazy! sync')
 end, {})
 
 -- editor preferences
@@ -24,9 +24,13 @@ vim.cmd("highlight MiniStatuslineFileinfo guifg=#ffffff")
 
 local map = vim.keymap.set
 
+map("n", "<space><space>x", "<cmd>source %<CR>")
+map("n", "<space>x", ":.lua<CR>")
+map("n", "<space>x", ":lua<CR>")
+
 -- Text Manipulation
-map("v", ">", ">gv") -- indent
-map("v", "<", "<gv") -- indent
+map("v", ">", ">gv")              -- indent
+map("v", "<", "<gv")              -- indent
 map("v", "J", ":m '>+1<CR>gv=gv") -- move down
 map("v", "K", ":m '<-2<CR>gv=gv") -- move up
 
