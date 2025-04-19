@@ -18,6 +18,10 @@ vim.opt.relativenumber = true
 
 vim.opt.shiftwidth = 4 -- number of spaces inserted when indenting
 
+vim.cmd("highlight MiniStatuslineDevInfo guifg=#ffffff")
+vim.cmd("highlight MiniStatuslineFilename guifg=#ffffff")
+vim.cmd("highlight MiniStatuslineFileinfo guifg=#ffffff")
+
 local map = vim.keymap.set
 
 -- Text Manipulation
