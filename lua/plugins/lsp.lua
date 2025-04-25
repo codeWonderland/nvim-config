@@ -19,6 +19,7 @@ return {
 			local capabilities = require('blink.cmp').get_lsp_capabilities()
 			require("lspconfig").lua_ls.setup { capabilities = capabilities }
 			require("lspconfig").gdscript.setup { capabilities = capabilities }
+			require("lspconfig").phpactor.setup { capabilities = capabilities }
 
 			-- I would like to get this working, but it is upset for now
 			--require("lspconfig").bacon_ls.setup {
