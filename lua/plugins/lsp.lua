@@ -2,6 +2,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
+			'saghen/blink.cmp',
 			{
 				"folke/lazydev.nvim",
 				ft = "lua", -- only load on lua files
@@ -15,8 +16,10 @@ return {
 			},
 		},
 		config = function()
-			require("lspconfig").lua_ls.setup {}
-			require("lspconfig").gdscript.setup {}
+			local capabilities = require('blink.cmp').get_lsp_capabilities()
+			require("lspconfig").lua_ls.setup { capabilities = capabilities }
+			require("lspconfig").gdscript.setup { capabilities = capabilities }
+			require("lspconfig").rust.setup { capabilities = capabilities }
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				group = vim.api.nvim_create_augroup('my.lsp', {}),
