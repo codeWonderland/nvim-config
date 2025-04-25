@@ -23,6 +23,11 @@ return {
 					cwd = vim.fn.stdpath("config")
 				}
 			end)
+			vim.keymap.set("n", "<space>ep", function()
+				require("telescope.builtin").find_files {
+					cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
+				}
+			end)
 
 			require "config.telescope.multigrep".setup()
 		end

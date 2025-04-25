@@ -54,3 +54,6 @@ autocmd({ "BufWritePre" }, {
 	pattern = "*",
 	command = [[%s/\s\+$//e]],
 })
+
+
+map("n", "<space>sd", "<cmd>lua vim.diagnostic.open_float()<CR>")
