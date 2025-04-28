@@ -21,7 +21,7 @@ local function create_floating_window(opts)
 	if vim.api.nvim_buf_is_valid(opts.buf) then
 		buf = opts.buf
 	else
-		buf = vim.api.nvim_create_buf(false, true) -- no file, scratch buffer
+		buf = vim.api.nvim_create_buf(false, true)
 	end
 
 	-- define window config
@@ -32,7 +32,6 @@ local function create_floating_window(opts)
 		col = col,
 		row = row,
 		style = "minimal",
-		-- border = "rounded",
 	}
 
 	-- create the floating window
