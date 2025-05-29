@@ -20,19 +20,7 @@ return {
 			require("lspconfig").lua_ls.setup { capabilities = capabilities }
 			require("lspconfig").gdscript.setup { capabilities = capabilities }
 			require("lspconfig").phpactor.setup { capabilities = capabilities }
-			require("lspconfig").ts_ls.setup {}
-			-- 	on_attach = function(client, bufnr)
-			-- 		-- format on save
-			-- 		if client.server_capabilities.documentFormattingProvider then
-			-- 			vim.api.nvim_create_autocmd("BufWritePre", {
-			-- 				group = vim.api.nvim_create_augroup("Format", { clear = true }),
-			-- 				buffer = bufnr,
-			-- 				callback = function() vim.lsp.buf.formatting_seq_sync() end
-			-- 			})
-			-- 		end
-			-- 	end,
-			-- 	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-			-- }
+			require("lspconfig").ts_ls.setup { capabilities = capabilities }
 
 			-- I would like to get this working, but it is upset for now
 			--require("lspconfig").bacon_ls.setup {
