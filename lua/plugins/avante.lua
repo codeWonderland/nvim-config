@@ -1,4 +1,7 @@
 -- lua/plugins/avante.lua
+-- Note: If there are issues on startup, ensure gh is installed,
+-- to install go to ~/.local/share/nvim/lazy/avante.nvim then run make clean && make
+-- Additionally, since we are using Gemini with the api key as an env variable, ensure that is in your .bashrc
 return {
 	{
 		"yetone/avante.nvim",
