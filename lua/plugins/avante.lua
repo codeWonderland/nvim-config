@@ -10,7 +10,7 @@ return {
 		opts = {
 			provider = "gemini",
 			gemini = {
-				api_key_name = "cmd:echo $GEMINI_API_KEY"
+				api_key_name = "GEMINI_API_KEY"
 			}
 		},
 		build = "make",
@@ -36,8 +36,6 @@ return {
 						drag_and_drop = {
 							insert_mode = true,
 						},
-						-- required for Windows users
-						use_absolute_path = true,
 					},
 				},
 			},
