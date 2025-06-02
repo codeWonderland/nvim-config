@@ -6,6 +6,8 @@ map("n", "<space>x", ":lua<CR>")
 
 map("n", "<space>sd", "<cmd>lua vim.diagnostic.open_float()<CR>")
 
+map("n", "<space>cp", "i<C-r>+")
+
 -- Text Manipulation
 map("v", ">", ">gv")              -- indent
 map("v", "<", "<gv")              -- indent

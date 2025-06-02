@@ -11,6 +11,9 @@ return {
 			provider = "gemini",
 			gemini = {
 				api_key_name = "GEMINI_API_KEY"
+			},
+			behaviour = {
+				auto_suggestions = false
 			}
 		},
 		build = "make",
