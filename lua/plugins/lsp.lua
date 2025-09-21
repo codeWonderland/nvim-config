@@ -17,10 +17,11 @@ return {
 		},
 		config = function()
 			local capabilities = require('blink.cmp').get_lsp_capabilities()
-			require("lspconfig").lua_ls.setup { capabilities = capabilities }
-			require("lspconfig").gdscript.setup { capabilities = capabilities }
-			require("lspconfig").phpactor.setup { capabilities = capabilities }
-			require("lspconfig").ts_ls.setup { capabilities = capabilities }
+			vim.lsp.config('lua_ls', { capabilities = capabilities })
+			vim.lsp.config('gdscript', { capabilities = capabilities })
+			vim.lsp.config('phpactor', { capabilities = capabilities })
+			vim.lsp.config('ts_ls', { capabilities = capabilities })
+			vim.lsp.config('pylsp', { capabilities = capabilities })
 
 			-- I would like to get this working, but it is upset for now
 			--require("lspconfig").bacon_ls.setup {
@@ -33,7 +34,7 @@ return {
 			--vim.g.lazyvim_rust_diagnostics = "bacon-ls"
 
 			-- TODO: Replace with bacon
-			require("lspconfig").rust_analyzer.setup {
+			vim.lsp.config('rust_analyzer', {
 				capabilities = capabilities,
 				settings = {
 					['rust-analyzer'] = {
@@ -42,7 +43,7 @@ return {
 						}
 					}
 				}
-			}
+			})
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				group = vim.api.nvim_create_augroup('my.lsp', {}),
